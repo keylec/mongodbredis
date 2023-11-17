@@ -25,8 +25,9 @@ export function LoginPage() {
     }
   }, [isAuthenticated]);
 
+  
   return (
-    <div className="h-[calc(100vh-100px)] flex items-center justify-center">
+    <div className="h-[calc(100vh-600px)] flex items-center justify-center">
       <Card>
         {loginErrors.map((error, i) => (
           <Message message={error} key={i} />
