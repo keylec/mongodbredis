@@ -1,5 +1,5 @@
 import { useAuth } from "../context/authContext";
-import { Link, useNavigate } from "react-router-dom";
+  import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -25,7 +25,7 @@ export function LoginPage() {
     }
   }, [isAuthenticated]);
 
-  
+
   return (
     <div className="h-[calc(100vh-600px)] flex items-center justify-center">
       <Card>
@@ -58,7 +58,7 @@ export function LoginPage() {
         </form>
 
         <p className="flex gap-x-2 justify-between">
-          Don't have an account? <Link to="/register" className="text-sky-500">Sign up</Link>
+          No tiene cuenta? <Link to="/register" className="text-sky-500">Sign up</Link>
         </p>
       </Card>
     </div>

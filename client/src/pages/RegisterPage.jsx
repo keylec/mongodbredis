@@ -26,7 +26,7 @@ function Register() {
   }, [isAuthenticated]);
 
   return (
-    <div className="h-[calc(100vh-100px)] flex items-center justify-center">
+    <div className="h-[calc(100vh-450px)] flex items-center justify-center">
       <Card>
         {registerErrors.map((error, i) => (
           <Message message={error} key={i} />
@@ -78,8 +78,8 @@ function Register() {
           )}
           <Button>Submit</Button>
         </form>
-        <p>
-          Already Have an Account?
+        <p className="flex gap-x-2 justify-between">
+          Ya tiene cuenta?
           <Link className="text-sky-500" to="/login">
             Login
           </Link>

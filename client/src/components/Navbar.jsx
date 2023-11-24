@@ -14,7 +14,7 @@ export function Navbar() {
       <div className="flex flex-grow items-center justify-center"> {/* Utiliza flex-grow y justify-center para centrar */}
         {isAuthenticated && (
           <div className="text-center">
-            Welcome {user.username}
+            Usuario {user.username}
           </div>
         )}
       </div>
@@ -27,7 +27,7 @@ export function Navbar() {
             <li className="bg-indigo-500 px-4 py-1 rounded-md">
               <Link to="/" onClick={() => logout()}>
                 Logout
-              </Link>
+              </Link> 
             </li>
           </>
         ) : (

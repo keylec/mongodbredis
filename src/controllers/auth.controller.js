@@ -14,10 +14,10 @@ export const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
-    const userFound = await User.findOne({ email });
+    // const userFound = await User.findOne({ email });
     const userExists = await redisClient.hexists('users', email);
 
-    if (userFound || userExists)
+    if (userExists)
       return res.status(400).json({
         message: ["The email is already in use"],
       });
@@ -29,7 +29,7 @@ export const register = async (req, res) => {
     const newUser = new User({
       username,
       email,
-      password: passwordHash,
+      // password: passwordHash,
     });
 
     // saving the user in the database
@@ -44,8 +44,8 @@ export const register = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: process.env.NODE_ENV !== "development",
-      secure: true,
-      sameSite: "none",
+      secure: false,
+      sameSite: "Lax",
     });
 
     res.json({
@@ -119,7 +119,7 @@ export const login = async (req, res) => {
     });
     console.log(`token ${JSON.stringify(token)}`);
 
-    
+
 
     res.cookie("token", token, {
       httpOnly: process.env.NODE_ENV !== "development",
